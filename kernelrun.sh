@@ -1,6 +1,8 @@
+#!/bin/bash
 kaggle kernels pull kiitand/another-sleep -m
 kaggle kernels push 
 echo "sleeping for 600 seconds"
+date +'%r'
 sleep 600
 
 
@@ -14,7 +16,7 @@ RESPONSE=$(kaggle kernels status kiitand/another-sleep)
 done
 echo "done"
 #download outputs
-find ../DownloadTest -delete
+rm -r ../DownloadTest
 kaggle kernels output -p ../DownloadTest kiitand/another-sleep
 echo 'done'
 
@@ -30,4 +32,7 @@ cp -r ../PullTemp/* ../DownloadTest                         # move files back fr
 rm -r ../PullTemp                                           # delete temp folder
 python create_vid.py
 python sendtweets.py
+zip -r ./backup.zip ../DownloadTest/info.txt ../DownloadTest/sleep
+python backup.py
+rm backup.zip
 

@@ -3,10 +3,10 @@ from dotenv import load_dotenv
 
 #read in and set env variables
 load_dotenv() 
-APPKEY = os.environ.get('APPKEY')
-APPSECRET = os.environ.get('APPSECRET')
-ACCOUNTKEY = os.environ.get('ACCOUNTKEY')
-ACCOUNTSECRET = os.environ.get('ACCOUNTSECRET')
+APPKEY = os.environ.get('TWITTERAPPKEY')
+APPSECRET = os.environ.get('TWITTERAPPSECRET')
+ACCOUNTKEY = os.environ.get('BOTACCOUNTKEY')
+ACCOUNTSECRET = os.environ.get('BOTACCOUNTSECRET')
 
 
 f = open("../DownloadTest/info.txt", "r")
